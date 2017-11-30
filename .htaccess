@@ -1,59 +1,8 @@
 <IfModule mod_rewrite.c>
 Options +FollowSymLinks
 RewriteEngine on
-RewriteCond %{SERVER_PORT} !^443$
-RewriteRule ^(.*)?$ https://%{SERVER_NAME}/$1 [L,R]
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
 </IfModule>
-
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^http://deals-daily.dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://deals-daily.dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://deals-daily.net/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://deals-daily.net$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://meishitour.com/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://meishitour.com$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://meishitour.dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://meishitour.dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.deals-daily.dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.deals-daily.dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.deals-daily.net/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.deals-daily.net$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.meishitour.com/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.meishitour.com$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.meishitour.dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.meishitour.dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://deals-daily.dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://deals-daily.dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://deals-daily.net/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://deals-daily.net$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://meishitour.com/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://meishitour.com$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://meishitour.dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://meishitour.dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.deals-daily.dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.deals-daily.dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.deals-daily.net/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.deals-daily.net$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.dongyi.link$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.meishitour.com/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.meishitour.com$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.meishitour.dongyi.link/.*$      [NC]
-RewriteCond %{HTTP_REFERER} !^https://www.meishitour.dongyi.link$      [NC]
-RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
-
-
-<Files 403.shtml>
-order allow,deny
-allow from all
-</Files>
